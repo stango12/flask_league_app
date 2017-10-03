@@ -32,7 +32,7 @@ function sad(i) {
                     }
                     else
                     {
-                        items[i - 1] = httpGet(link + "/itemInfo/" + selected);
+                        items[i - 1] = httpGet("/itemInfo/" + selected);
                     }
                     names[i - 1] = selected;
                     $(title)[0].src = "/static/items/" + selected.replace(/ /g,"_") + ".png";

@@ -185,7 +185,7 @@ $( document ).ready(function() {
 
                         if(premade[i] != "")
                         {
-                            items[i] = httpGet("/itemInfo/" + premade[i].replace("_", "%20"));
+                            items[i] = httpGet("/itemInfo/" + premade[i].replace("/_/g", "%20"));
                         }
                         names[i] = premade[i].replace("_", " ");
                         $(title)[0].src = "/static/items/" + premade[i] + ".png";

@@ -1,0 +1,13 @@
+FlatMPPoolMod - MP
+FlatArmorMod - Armor
+FlatMagicDamageMod - AP
+FlatSpellBlockMod - MR
+FlatPhysicalDamageMod - AD
+FlatHPPoolMod - HP
+FlatMovementSpeedMod - Speed
+PercentMovementSpeedMod - % Speed increase
+PercentAttackSpeedMod - AS
+FlatCritChanceMod - Crit Chance
+PercentLifeStealMod - Life Steal
+CoolDownReduction - CDR
+FlatHPRegenMod - HP Regen (not needed)

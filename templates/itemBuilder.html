@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <link rel="icon" href="{{url_for('static', filename='league.ico')}}">
+    <title>League of Legends Calculator</title>
+ 
+    <link type='text/css' href="{{url_for('static', filename='narrow-jumbotron.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link type='text/css' href="{{url_for('static', filename='bootstrap-extra.css')}}" rel="stylesheet">
+
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+    <style>
+    .scrollable-menu {
+        height: auto;
+        max-height: 200px;
+        overflow-x: hidden;
+    }
+    @media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.center {
+    text-align: center;
+}
+</style>
+</head>
+ 
+<body>
+ 
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">League of Legends Calculator</h3>
+        </div>
+      <div class="col-lg-6">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="name1">No Item</span>
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu scrollable-menu" id="drop1">
+            <li><a href="#">Abyssal Mask</a></li>
+            <li><a href="#">Adaptive Helm</a></li>
+            <li><a href="#">Archangel's Staff</a></li>
+            <li><a href="#">Ardent Censer</a></li>
+            <li><a href="#">Athene's Unholy Grail</a></li>
+            <li><a href="#">Banner of Command</a></li>
+            <li><a href="#">Banshee's Veil</a></li>
+            <li><a href="#">Berserker's Greaves</a></li>
+            <li><a href="#">Blade of the Ruined King</a></li>
+            <li><a href="#">Boots of Mobility</a></li>
+            <li><a href="#">Boots of Swiftness</a></li>
+            <li><a href="#">Circlet of the Iron Solari</a></li>
+            <li><a href="#">Dead Man's Plate</a></li>
+            <li><a href="#">Death's Dance</a></li>
+            <li><a href="#">Duskblade of Draktharr</a></li>
+            <li><a href="#">Edge of Night</a></li>
+            <li><a href="#">Enchantment Bloodrazor</a></li>
+            <li><a href="#">Enchantment Cinderhulk</a></li>
+            <li><a href="#">Enchantment Runic Echoes</a></li>
+            <li><a href="#">Enchantment Warrior</a></li>
+            <li><a href="#">Essence Reaver</a></li>
+            <li><a href="#">Eye of the Equinox</a></li>
+            <li><a href="#">Eye of the Oasis</a></li>
+            <li><a href="#">Eye of the Watchers</a></li>
+            <li><a href="#">Face of the Mountain</a></li>
+            <li><a href="#">Forgefire Cape</a></li>
+            <li><a href="#">Frost Queen's Claim</a></li>
+            <li><a href="#">Frozen Heart</a></li>
+            <li><a href="#">Frozen Mallet</a></li>
+            <li><a href="#">Gargoyle Stoneplate</a></li>
+            <li><a href="#">Guardian Angel</a></li>
+            <li><a href="#">Guinsoo's Rageblade</a></li>
+            <li><a href="#">Hextech GLP-800</a></li>
+            <li><a href="#">Hextech Gunblade</a></li>
+            <li><a href="#">Hextech Protobelt-01</a></li>
+            <li><a href="#">Iceborn Gauntlet</a></li>
+            <li><a href="#">Infernal Mask</a></li>
+            <li><a href="#">Infinity Edge</a></li>
+            <li><a href="#">Ionian Boots of Lucidity</a></li>
+            <li><a href="#">Knight's Vow</a></li>
+            <li><a href="#">Liandry's Torment</a></li>
+            <li><a href="#">Lich Bane</a></li>
+            <li><a href="#">Locket of the Iron Solari</a></li>
+            <li><a href="#">Lord Dominik's Regards</a></li>
+            <li><a href="#">Luden's Echo</a></li>
+            <li><a href="#">Manamune</a></li>
+            <li><a href="#">Maw of Malmortius</a></li>
+            <li><a href="#">Mejai's Soulstealer</a></li>
+            <li><a href="#">Mercurial Scimitar</a></li>
+            <li><a href="#">Mercury's Treads</a></li>
+            <li><a href="#">Mikael's Crucible</a></li>
+            <li><a href="#">Molten Edge</a></li>
+            <li><a href="#">Morellonomicon</a></li>
+            <li><a href="#">Mortal Reminder</a></li>
+            <li><a href="#">Muramana</a></li>
+            <li><a href="#">Nashor's Tooth</a></li>
+            <li><a href="#">Ninja Tabi</a></li>
+            <li><a href="#">Ohmwrecker</a></li>
+            <li><a href="#">Phantom Dancer</a></li>
+            <li><a href="#">Poacher's Dirk</a></li>
+            <li><a href="#">Rabadon's Deathcap</a></li>
+            <li><a href="#">Rabadon's Deathcrown</a></li>
+            <li><a href="#">Randuin's Omen</a></li>
+            <li><a href="#">Rapid Firecannon</a></li>
+            <li><a href="#">Ravenous Hydra</a></li>
+            <li><a href="#">Redemption</a></li>
+            <li><a href="#">Righteous Glory</a></li>
+            <li><a href="#">Rod of Ages</a></li>
+            <li><a href="#">Ruby Sightstone</a></li>
+            <li><a href="#">Runaan's Hurricane</a></li>
+            <li><a href="#">Rylai's Crystal Scepter</a></li>
+            <li><a href="#">Salvation</a></li>
+            <li><a href="#">Seraph's Embrace</a></li>
+            <li><a href="#">Sorcerer's Shoes</a></li>
+            <li><a href="#">Spirit Visage</a></li>
+            <li><a href="#">Statikk Shiv</a></li>
+            <li><a href="#">Sterak's Gage</a></li>
+            <li><a href="#">Sunfire Cape</a></li>
+            <li><a href="#">Talisman of Ascension</a></li>
+            <li><a href="#">The Black Cleaver</a></li>
+            <li><a href="#">The Bloodthirster</a></li>
+            <li><a href="#">The Obsidian Cleaver</a></li>
+            <li><a href="#">Thornmail</a></li>
+            <li><a href="#">Titanic Hydra</a></li>
+            <li><a href="#">Trinity Force</a></li>
+            <li><a href="#">Trinity Fusion</a></li>
+            <li><a href="#">Void Staff</a></li>
+            <li><a href="#">Warmog's Armor</a></li>
+            <li><a href="#">Wit's End</a></li>
+            <li><a href="#">Youmuu's Ghostblade</a></li>
+            <li><a href="#">Zeke's Convergence</a></li>
+            <li><a href="#">Zhonya's Hourglass</a></li>
+            <li><a href="#">Zz'Rot Portal</a></li>
+            <li><a href="#">None</a></li>
+            </ul>
+        </div>
+            <br>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="name2">No Item</span>
+          <span class="caret"></span></button>
+            <ul class="dropdown-menu scrollable-menu" id="drop2">
+            <li><a href="#">Abyssal Mask</a></li>
+            <li><a href="#">Adaptive Helm</a></li>
+            <li><a href="#">Archangel's Staff</a></li>
+            <li><a href="#">Ardent Censer</a></li>
+            <li><a href="#">Athene's Unholy Grail</a></li>
+            <li><a href="#">Banner of Command</a></li>
+            <li><a href="#">Banshee's Veil</a></li>
+            <li><a href="#">Berserker's Greaves</a></li>
+            <li><a href="#">Blade of the Ruined King</a></li>
+            <li><a href="#">Boots of Mobility</a></li>
+            <li><a href="#">Boots of Swiftness</a></li>
+            <li><a href="#">Circlet of the Iron Solari</a></li>
+            <li><a href="#">Dead Man's Plate</a></li>
+            <li><a href="#">Death's Dance</a></li>
+            <li><a href="#">Duskblade of Draktharr</a></li>
+            <li><a href="#">Edge of Night</a></li>
+            <li><a href="#">Enchantment Bloodrazor</a></li>
+            <li><a href="#">Enchantment Cinderhulk</a></li>
+            <li><a href="#">Enchantment Runic Echoes</a></li>
+            <li><a href="#">Enchantment Warrior</a></li>
+            <li><a href="#">Essence Reaver</a></li>
+            <li><a href="#">Eye of the Equinox</a></li>
+            <li><a href="#">Eye of the Oasis</a></li>
+            <li><a href="#">Eye of the Watchers</a></li>
+            <li><a href="#">Face of the Mountain</a></li>
+            <li><a href="#">Forgefire Cape</a></li>
+            <li><a href="#">Frost Queen's Claim</a></li>
+            <li><a href="#">Frozen Heart</a></li>
+            <li><a href="#">Frozen Mallet</a></li>
+            <li><a href="#">Gargoyle Stoneplate</a></li>
+            <li><a href="#">Guardian Angel</a></li>
+            <li><a href="#">Guinsoo's Rageblade</a></li>
+            <li><a href="#">Hextech GLP-800</a></li>
+            <li><a href="#">Hextech Gunblade</a></li>
+            <li><a href="#">Hextech Protobelt-01</a></li>
+            <li><a href="#">Iceborn Gauntlet</a></li>
+            <li><a href="#">Infernal Mask</a></li>
+            <li><a href="#">Infinity Edge</a></li>
+            <li><a href="#">Ionian Boots of Lucidity</a></li>
+            <li><a href="#">Knight's Vow</a></li>
+            <li><a href="#">Liandry's Torment</a></li>
+            <li><a href="#">Lich Bane</a></li>
+            <li><a href="#">Locket of the Iron Solari</a></li>
+            <li><a href="#">Lord Dominik's Regards</a></li>
+            <li><a href="#">Luden's Echo</a></li>
+            <li><a href="#">Manamune</a></li>
+            <li><a href="#">Maw of Malmortius</a></li>
+            <li><a href="#">Mejai's Soulstealer</a></li>
+            <li><a href="#">Mercurial Scimitar</a></li>
+            <li><a href="#">Mercury's Treads</a></li>
+            <li><a href="#">Mikael's Crucible</a></li>
+            <li><a href="#">Molten Edge</a></li>
+            <li><a href="#">Morellonomicon</a></li>
+            <li><a href="#">Mortal Reminder</a></li>
+            <li><a href="#">Muramana</a></li>
+            <li><a href="#">Nashor's Tooth</a></li>
+            <li><a href="#">Ninja Tabi</a></li>
+            <li><a href="#">Ohmwrecker</a></li>
+            <li><a href="#">Phantom Dancer</a></li>
+            <li><a href="#">Poacher's Dirk</a></li>
+            <li><a href="#">Rabadon's Deathcap</a></li>
+            <li><a href="#">Rabadon's Deathcrown</a></li>
+            <li><a href="#">Randuin's Omen</a></li>
+            <li><a href="#">Rapid Firecannon</a></li>
+            <li><a href="#">Ravenous Hydra</a></li>
+            <li><a href="#">Redemption</a></li>
+            <li><a href="#">Righteous Glory</a></li>
+            <li><a href="#">Rod of Ages</a></li>
+            <li><a href="#">Ruby Sightstone</a></li>
+            <li><a href="#">Runaan's Hurricane</a></li>
+            <li><a href="#">Rylai's Crystal Scepter</a></li>
+            <li><a href="#">Salvation</a></li>
+            <li><a href="#">Seraph's Embrace</a></li>
+            <li><a href="#">Sorcerer's Shoes</a></li>
+            <li><a href="#">Spirit Visage</a></li>
+            <li><a href="#">Statikk Shiv</a></li>
+            <li><a href="#">Sterak's Gage</a></li>
+            <li><a href="#">Sunfire Cape</a></li>
+            <li><a href="#">Talisman of Ascension</a></li>
+            <li><a href="#">The Black Cleaver</a></li>
+            <li><a href="#">The Bloodthirster</a></li>
+            <li><a href="#">The Obsidian Cleaver</a></li>
+            <li><a href="#">Thornmail</a></li>
+            <li><a href="#">Titanic Hydra</a></li>
+            <li><a href="#">Trinity Force</a></li>
+            <li><a href="#">Trinity Fusion</a></li>
+            <li><a href="#">Void Staff</a></li>
+            <li><a href="#">Warmog's Armor</a></li>
+            <li><a href="#">Wit's End</a></li>
+            <li><a href="#">Youmuu's Ghostblade</a></li>
+            <li><a href="#">Zeke's Convergence</a></li>
+            <li><a href="#">Zhonya's Hourglass</a></li>
+            <li><a href="#">Zz'Rot Portal</a></li>
+            <li><a href="#">None</a></li>
+            </ul>
+        </div>
+            <br>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="name3">No Item</span>
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu scrollable-menu" id="drop3">
+            <li><a href="#">Abyssal Mask</a></li>
+            <li><a href="#">Adaptive Helm</a></li>
+            <li><a href="#">Archangel's Staff</a></li>
+            <li><a href="#">Ardent Censer</a></li>
+            <li><a href="#">Athene's Unholy Grail</a></li>
+            <li><a href="#">Banner of Command</a></li>
+            <li><a href="#">Banshee's Veil</a></li>
+            <li><a href="#">Berserker's Greaves</a></li>
+            <li><a href="#">Blade of the Ruined King</a></li>
+            <li><a href="#">Boots of Mobility</a></li>
+            <li><a href="#">Boots of Swiftness</a></li>
+            <li><a href="#">Circlet of the Iron Solari</a></li>
+            <li><a href="#">Dead Man's Plate</a></li>
+            <li><a href="#">Death's Dance</a></li>
+            <li><a href="#">Duskblade of Draktharr</a></li>
+            <li><a href="#">Edge of Night</a></li>
+            <li><a href="#">Enchantment Bloodrazor</a></li>
+            <li><a href="#">Enchantment Cinderhulk</a></li>
+            <li><a href="#">Enchantment Runic Echoes</a></li>
+            <li><a href="#">Enchantment Warrior</a></li>
+            <li><a href="#">Essence Reaver</a></li>
+            <li><a href="#">Eye of the Equinox</a></li>
+            <li><a href="#">Eye of the Oasis</a></li>
+            <li><a href="#">Eye of the Watchers</a></li>
+            <li><a href="#">Face of the Mountain</a></li>
+            <li><a href="#">Forgefire Cape</a></li>
+            <li><a href="#">Frost Queen's Claim</a></li>
+            <li><a href="#">Frozen Heart</a></li>
+            <li><a href="#">Frozen Mallet</a></li>
+            <li><a href="#">Gargoyle Stoneplate</a></li>
+            <li><a href="#">Guardian Angel</a></li>
+            <li><a href="#">Guinsoo's Rageblade</a></li>
+            <li><a href="#">Hextech GLP-800</a></li>
+            <li><a href="#">Hextech Gunblade</a></li>
+            <li><a href="#">Hextech Protobelt-01</a></li>
+            <li><a href="#">Iceborn Gauntlet</a></li>
+            <li><a href="#">Infernal Mask</a></li>
+            <li><a href="#">Infinity Edge</a></li>
+            <li><a href="#">Ionian Boots of Lucidity</a></li>
+            <li><a href="#">Knight's Vow</a></li>
+            <li><a href="#">Liandry's Torment</a></li>
+            <li><a href="#">Lich Bane</a></li>
+            <li><a href="#">Locket of the Iron Solari</a></li>
+            <li><a href="#">Lord Dominik's Regards</a></li>
+            <li><a href="#">Luden's Echo</a></li>
+            <li><a href="#">Manamune</a></li>
+            <li><a href="#">Maw of Malmortius</a></li>
+            <li><a href="#">Mejai's Soulstealer</a></li>
+            <li><a href="#">Mercurial Scimitar</a></li>
+            <li><a href="#">Mercury's Treads</a></li>
+            <li><a href="#">Mikael's Crucible</a></li>
+            <li><a href="#">Molten Edge</a></li>
+            <li><a href="#">Morellonomicon</a></li>
+            <li><a href="#">Mortal Reminder</a></li>
+            <li><a href="#">Muramana</a></li>
+            <li><a href="#">Nashor's Tooth</a></li>
+            <li><a href="#">Ninja Tabi</a></li>
+            <li><a href="#">Ohmwrecker</a></li>
+            <li><a href="#">Phantom Dancer</a></li>
+            <li><a href="#">Poacher's Dirk</a></li>
+            <li><a href="#">Rabadon's Deathcap</a></li>
+            <li><a href="#">Rabadon's Deathcrown</a></li>
+            <li><a href="#">Randuin's Omen</a></li>
+            <li><a href="#">Rapid Firecannon</a></li>
+            <li><a href="#">Ravenous Hydra</a></li>
+            <li><a href="#">Redemption</a></li>
+            <li><a href="#">Righteous Glory</a></li>
+            <li><a href="#">Rod of Ages</a></li>
+            <li><a href="#">Ruby Sightstone</a></li>
+            <li><a href="#">Runaan's Hurricane</a></li>
+            <li><a href="#">Rylai's Crystal Scepter</a></li>
+            <li><a href="#">Salvation</a></li>
+            <li><a href="#">Seraph's Embrace</a></li>
+            <li><a href="#">Sorcerer's Shoes</a></li>
+            <li><a href="#">Spirit Visage</a></li>
+            <li><a href="#">Statikk Shiv</a></li>
+            <li><a href="#">Sterak's Gage</a></li>
+            <li><a href="#">Sunfire Cape</a></li>
+            <li><a href="#">Talisman of Ascension</a></li>
+            <li><a href="#">The Black Cleaver</a></li>
+            <li><a href="#">The Bloodthirster</a></li>
+            <li><a href="#">The Obsidian Cleaver</a></li>
+            <li><a href="#">Thornmail</a></li>
+            <li><a href="#">Titanic Hydra</a></li>
+            <li><a href="#">Trinity Force</a></li>
+            <li><a href="#">Trinity Fusion</a></li>
+            <li><a href="#">Void Staff</a></li>
+            <li><a href="#">Warmog's Armor</a></li>
+            <li><a href="#">Wit's End</a></li>
+            <li><a href="#">Youmuu's Ghostblade</a></li>
+            <li><a href="#">Zeke's Convergence</a></li>
+            <li><a href="#">Zhonya's Hourglass</a></li>
+            <li><a href="#">Zz'Rot Portal</a></li>
+            <li><a href="#">None</a></li>
+          </ul>
+        </div>
+            <br> <br>
+            <img id="item1" src="/static/items/None.png"></img>
+            <img id="item2" src="/static/items/None.png"></img>
+            <img id="item3" src="/static/items/None.png"></img>
+            <img id="item4" src="/static/items/None.png"></img>
+            <img id="item5" src="/static/items/None.png"></img>
+            <img id="item6" src="/static/items/None.png"></img>
+      </div>
+        <div class="col-lg-6">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="name4">No Item</span>
+              <span class="caret"></span></button>
+                <ul class="dropdown-menu scrollable-menu" id="drop4">
+                <li><a href="#">Abyssal Mask</a></li>
+                <li><a href="#">Adaptive Helm</a></li>
+                <li><a href="#">Archangel's Staff</a></li>
+                <li><a href="#">Ardent Censer</a></li>
+                <li><a href="#">Athene's Unholy Grail</a></li>
+                <li><a href="#">Banner of Command</a></li>
+                <li><a href="#">Banshee's Veil</a></li>
+                <li><a href="#">Berserker's Greaves</a></li>
+                <li><a href="#">Blade of the Ruined King</a></li>
+                <li><a href="#">Boots of Mobility</a></li>
+                <li><a href="#">Boots of Swiftness</a></li>
+                <li><a href="#">Circlet of the Iron Solari</a></li>
+                <li><a href="#">Dead Man's Plate</a></li>
+                <li><a href="#">Death's Dance</a></li>
+                <li><a href="#">Duskblade of Draktharr</a></li>
+                <li><a href="#">Edge of Night</a></li>
+                <li><a href="#">Enchantment Bloodrazor</a></li>
+                <li><a href="#">Enchantment Cinderhulk</a></li>
+                <li><a href="#">Enchantment Runic Echoes</a></li>
+                <li><a href="#">Enchantment Warrior</a></li>
+                <li><a href="#">Essence Reaver</a></li>
+                <li><a href="#">Eye of the Equinox</a></li>
+                <li><a href="#">Eye of the Oasis</a></li>
+                <li><a href="#">Eye of the Watchers</a></li>
+                <li><a href="#">Face of the Mountain</a></li>
+                <li><a href="#">Forgefire Cape</a></li>
+                <li><a href="#">Frost Queen's Claim</a></li>
+                <li><a href="#">Frozen Heart</a></li>
+                <li><a href="#">Frozen Mallet</a></li>
+                <li><a href="#">Gargoyle Stoneplate</a></li>
+                <li><a href="#">Guardian Angel</a></li>
+                <li><a href="#">Guinsoo's Rageblade</a></li>
+                <li><a href="#">Hextech GLP-800</a></li>
+                <li><a href="#">Hextech Gunblade</a></li>
+                <li><a href="#">Hextech Protobelt-01</a></li>
+                <li><a href="#">Iceborn Gauntlet</a></li>
+                <li><a href="#">Infernal Mask</a></li>
+                <li><a href="#">Infinity Edge</a></li>
+                <li><a href="#">Ionian Boots of Lucidity</a></li>
+                <li><a href="#">Knight's Vow</a></li>
+                <li><a href="#">Liandry's Torment</a></li>
+                <li><a href="#">Lich Bane</a></li>
+                <li><a href="#">Locket of the Iron Solari</a></li>
+                <li><a href="#">Lord Dominik's Regards</a></li>
+                <li><a href="#">Luden's Echo</a></li>
+                <li><a href="#">Manamune</a></li>
+                <li><a href="#">Maw of Malmortius</a></li>
+                <li><a href="#">Mejai's Soulstealer</a></li>
+                <li><a href="#">Mercurial Scimitar</a></li>
+                <li><a href="#">Mercury's Treads</a></li>
+                <li><a href="#">Mikael's Crucible</a></li>
+                <li><a href="#">Molten Edge</a></li>
+                <li><a href="#">Morellonomicon</a></li>
+                <li><a href="#">Mortal Reminder</a></li>
+                <li><a href="#">Muramana</a></li>
+                <li><a href="#">Nashor's Tooth</a></li>
+                <li><a href="#">Ninja Tabi</a></li>
+                <li><a href="#">Ohmwrecker</a></li>
+                <li><a href="#">Phantom Dancer</a></li>
+                <li><a href="#">Poacher's Dirk</a></li>
+                <li><a href="#">Rabadon's Deathcap</a></li>
+                <li><a href="#">Rabadon's Deathcrown</a></li>
+                <li><a href="#">Randuin's Omen</a></li>
+                <li><a href="#">Rapid Firecannon</a></li>
+                <li><a href="#">Ravenous Hydra</a></li>
+                <li><a href="#">Redemption</a></li>
+                <li><a href="#">Righteous Glory</a></li>
+                <li><a href="#">Rod of Ages</a></li>
+                <li><a href="#">Ruby Sightstone</a></li>
+                <li><a href="#">Runaan's Hurricane</a></li>
+                <li><a href="#">Rylai's Crystal Scepter</a></li>
+                <li><a href="#">Salvation</a></li>
+                <li><a href="#">Seraph's Embrace</a></li>
+                <li><a href="#">Sorcerer's Shoes</a></li>
+                <li><a href="#">Spirit Visage</a></li>
+                <li><a href="#">Statikk Shiv</a></li>
+                <li><a href="#">Sterak's Gage</a></li>
+                <li><a href="#">Sunfire Cape</a></li>
+                <li><a href="#">Talisman of Ascension</a></li>
+                <li><a href="#">The Black Cleaver</a></li>
+                <li><a href="#">The Bloodthirster</a></li>
+                <li><a href="#">The Obsidian Cleaver</a></li>
+                <li><a href="#">Thornmail</a></li>
+                <li><a href="#">Titanic Hydra</a></li>
+                <li><a href="#">Trinity Force</a></li>
+                <li><a href="#">Trinity Fusion</a></li>
+                <li><a href="#">Void Staff</a></li>
+                <li><a href="#">Warmog's Armor</a></li>
+                <li><a href="#">Wit's End</a></li>
+                <li><a href="#">Youmuu's Ghostblade</a></li>
+                <li><a href="#">Zeke's Convergence</a></li>
+                <li><a href="#">Zhonya's Hourglass</a></li>
+                <li><a href="#">Zz'Rot Portal</a></li>
+                <li><a href="#">None</a></li>
+                </ul>
+            </div>
+                <br>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="name5">No Item</span>
+              <span class="caret"></span></button>
+                <ul class="dropdown-menu scrollable-menu" id="drop5">
+                <li><a href="#">Abyssal Mask</a></li>
+                <li><a href="#">Adaptive Helm</a></li>
+                <li><a href="#">Archangel's Staff</a></li>
+                <li><a href="#">Ardent Censer</a></li>
+                <li><a href="#">Athene's Unholy Grail</a></li>
+                <li><a href="#">Banner of Command</a></li>
+                <li><a href="#">Banshee's Veil</a></li>
+                <li><a href="#">Berserker's Greaves</a></li>
+                <li><a href="#">Blade of the Ruined King</a></li>
+                <li><a href="#">Boots of Mobility</a></li>
+                <li><a href="#">Boots of Swiftness</a></li>
+                <li><a href="#">Circlet of the Iron Solari</a></li>
+                <li><a href="#">Dead Man's Plate</a></li>
+                <li><a href="#">Death's Dance</a></li>
+                <li><a href="#">Duskblade of Draktharr</a></li>
+                <li><a href="#">Edge of Night</a></li>
+                <li><a href="#">Enchantment Bloodrazor</a></li>
+                <li><a href="#">Enchantment Cinderhulk</a></li>
+                <li><a href="#">Enchantment Runic Echoes</a></li>
+                <li><a href="#">Enchantment Warrior</a></li>
+                <li><a href="#">Essence Reaver</a></li>
+                <li><a href="#">Eye of the Equinox</a></li>
+                <li><a href="#">Eye of the Oasis</a></li>
+                <li><a href="#">Eye of the Watchers</a></li>
+                <li><a href="#">Face of the Mountain</a></li>
+                <li><a href="#">Forgefire Cape</a></li>
+                <li><a href="#">Frost Queen's Claim</a></li>
+                <li><a href="#">Frozen Heart</a></li>
+                <li><a href="#">Frozen Mallet</a></li>
+                <li><a href="#">Gargoyle Stoneplate</a></li>
+                <li><a href="#">Guardian Angel</a></li>
+                <li><a href="#">Guinsoo's Rageblade</a></li>
+                <li><a href="#">Hextech GLP-800</a></li>
+                <li><a href="#">Hextech Gunblade</a></li>
+                <li><a href="#">Hextech Protobelt-01</a></li>
+                <li><a href="#">Iceborn Gauntlet</a></li>
+                <li><a href="#">Infernal Mask</a></li>
+                <li><a href="#">Infinity Edge</a></li>
+                <li><a href="#">Ionian Boots of Lucidity</a></li>
+                <li><a href="#">Knight's Vow</a></li>
+                <li><a href="#">Liandry's Torment</a></li>
+                <li><a href="#">Lich Bane</a></li>
+                <li><a href="#">Locket of the Iron Solari</a></li>
+                <li><a href="#">Lord Dominik's Regards</a></li>
+                <li><a href="#">Luden's Echo</a></li>
+                <li><a href="#">Manamune</a></li>
+                <li><a href="#">Maw of Malmortius</a></li>
+                <li><a href="#">Mejai's Soulstealer</a></li>
+                <li><a href="#">Mercurial Scimitar</a></li>
+                <li><a href="#">Mercury's Treads</a></li>
+                <li><a href="#">Mikael's Crucible</a></li>
+                <li><a href="#">Molten Edge</a></li>
+                <li><a href="#">Morellonomicon</a></li>
+                <li><a href="#">Mortal Reminder</a></li>
+                <li><a href="#">Muramana</a></li>
+                <li><a href="#">Nashor's Tooth</a></li>
+                <li><a href="#">Ninja Tabi</a></li>
+                <li><a href="#">Ohmwrecker</a></li>
+                <li><a href="#">Phantom Dancer</a></li>
+                <li><a href="#">Poacher's Dirk</a></li>
+                <li><a href="#">Rabadon's Deathcap</a></li>
+                <li><a href="#">Rabadon's Deathcrown</a></li>
+                <li><a href="#">Randuin's Omen</a></li>
+                <li><a href="#">Rapid Firecannon</a></li>
+                <li><a href="#">Ravenous Hydra</a></li>
+                <li><a href="#">Redemption</a></li>
+                <li><a href="#">Righteous Glory</a></li>
+                <li><a href="#">Rod of Ages</a></li>
+                <li><a href="#">Ruby Sightstone</a></li>
+                <li><a href="#">Runaan's Hurricane</a></li>
+                <li><a href="#">Rylai's Crystal Scepter</a></li>
+                <li><a href="#">Salvation</a></li>
+                <li><a href="#">Seraph's Embrace</a></li>
+                <li><a href="#">Sorcerer's Shoes</a></li>
+                <li><a href="#">Spirit Visage</a></li>
+                <li><a href="#">Statikk Shiv</a></li>
+                <li><a href="#">Sterak's Gage</a></li>
+                <li><a href="#">Sunfire Cape</a></li>
+                <li><a href="#">Talisman of Ascension</a></li>
+                <li><a href="#">The Black Cleaver</a></li>
+                <li><a href="#">The Bloodthirster</a></li>
+                <li><a href="#">The Obsidian Cleaver</a></li>
+                <li><a href="#">Thornmail</a></li>
+                <li><a href="#">Titanic Hydra</a></li>
+                <li><a href="#">Trinity Force</a></li>
+                <li><a href="#">Trinity Fusion</a></li>
+                <li><a href="#">Void Staff</a></li>
+                <li><a href="#">Warmog's Armor</a></li>
+                <li><a href="#">Wit's End</a></li>
+                <li><a href="#">Youmuu's Ghostblade</a></li>
+                <li><a href="#">Zeke's Convergence</a></li>
+                <li><a href="#">Zhonya's Hourglass</a></li>
+                <li><a href="#">Zz'Rot Portal</a></li>
+                <li><a href="#">None</a></li>
+                </ul>
+            </div>
+                <br>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="name6">No Item</span>
+              <span class="caret"></span></button>
+                <ul class="dropdown-menu scrollable-menu" id="drop6">
+                <li><a href="#">Abyssal Mask</a></li>
+                <li><a href="#">Adaptive Helm</a></li>
+                <li><a href="#">Archangel's Staff</a></li>
+                <li><a href="#">Ardent Censer</a></li>
+                <li><a href="#">Athene's Unholy Grail</a></li>
+                <li><a href="#">Banner of Command</a></li>
+                <li><a href="#">Banshee's Veil</a></li>
+                <li><a href="#">Berserker's Greaves</a></li>
+                <li><a href="#">Blade of the Ruined King</a></li>
+                <li><a href="#">Boots of Mobility</a></li>
+                <li><a href="#">Boots of Swiftness</a></li>
+                <li><a href="#">Circlet of the Iron Solari</a></li>
+                <li><a href="#">Dead Man's Plate</a></li>
+                <li><a href="#">Death's Dance</a></li>
+                <li><a href="#">Duskblade of Draktharr</a></li>
+                <li><a href="#">Edge of Night</a></li>
+                <li><a href="#">Enchantment Bloodrazor</a></li>
+                <li><a href="#">Enchantment Cinderhulk</a></li>
+                <li><a href="#">Enchantment Runic Echoes</a></li>
+                <li><a href="#">Enchantment Warrior</a></li>
+                <li><a href="#">Essence Reaver</a></li>
+                <li><a href="#">Eye of the Equinox</a></li>
+                <li><a href="#">Eye of the Oasis</a></li>
+                <li><a href="#">Eye of the Watchers</a></li>
+                <li><a href="#">Face of the Mountain</a></li>
+                <li><a href="#">Forgefire Cape</a></li>
+                <li><a href="#">Frost Queen's Claim</a></li>
+                <li><a href="#">Frozen Heart</a></li>
+                <li><a href="#">Frozen Mallet</a></li>
+                <li><a href="#">Gargoyle Stoneplate</a></li>
+                <li><a href="#">Guardian Angel</a></li>
+                <li><a href="#">Guinsoo's Rageblade</a></li>
+                <li><a href="#">Hextech GLP-800</a></li>
+                <li><a href="#">Hextech Gunblade</a></li>
+                <li><a href="#">Hextech Protobelt-01</a></li>
+                <li><a href="#">Iceborn Gauntlet</a></li>
+                <li><a href="#">Infernal Mask</a></li>
+                <li><a href="#">Infinity Edge</a></li>
+                <li><a href="#">Ionian Boots of Lucidity</a></li>
+                <li><a href="#">Knight's Vow</a></li>
+                <li><a href="#">Liandry's Torment</a></li>
+                <li><a href="#">Lich Bane</a></li>
+                <li><a href="#">Locket of the Iron Solari</a></li>
+                <li><a href="#">Lord Dominik's Regards</a></li>
+                <li><a href="#">Luden's Echo</a></li>
+                <li><a href="#">Manamune</a></li>
+                <li><a href="#">Maw of Malmortius</a></li>
+                <li><a href="#">Mejai's Soulstealer</a></li>
+                <li><a href="#">Mercurial Scimitar</a></li>
+                <li><a href="#">Mercury's Treads</a></li>
+                <li><a href="#">Mikael's Crucible</a></li>
+                <li><a href="#">Molten Edge</a></li>
+                <li><a href="#">Morellonomicon</a></li>
+                <li><a href="#">Mortal Reminder</a></li>
+                <li><a href="#">Muramana</a></li>
+                <li><a href="#">Nashor's Tooth</a></li>
+                <li><a href="#">Ninja Tabi</a></li>
+                <li><a href="#">Ohmwrecker</a></li>
+                <li><a href="#">Phantom Dancer</a></li>
+                <li><a href="#">Poacher's Dirk</a></li>
+                <li><a href="#">Rabadon's Deathcap</a></li>
+                <li><a href="#">Rabadon's Deathcrown</a></li>
+                <li><a href="#">Randuin's Omen</a></li>
+                <li><a href="#">Rapid Firecannon</a></li>
+                <li><a href="#">Ravenous Hydra</a></li>
+                <li><a href="#">Redemption</a></li>
+                <li><a href="#">Righteous Glory</a></li>
+                <li><a href="#">Rod of Ages</a></li>
+                <li><a href="#">Ruby Sightstone</a></li>
+                <li><a href="#">Runaan's Hurricane</a></li>
+                <li><a href="#">Rylai's Crystal Scepter</a></li>
+                <li><a href="#">Salvation</a></li>
+                <li><a href="#">Seraph's Embrace</a></li>
+                <li><a href="#">Sorcerer's Shoes</a></li>
+                <li><a href="#">Spirit Visage</a></li>
+                <li><a href="#">Statikk Shiv</a></li>
+                <li><a href="#">Sterak's Gage</a></li>
+                <li><a href="#">Sunfire Cape</a></li>
+                <li><a href="#">Talisman of Ascension</a></li>
+                <li><a href="#">The Black Cleaver</a></li>
+                <li><a href="#">The Bloodthirster</a></li>
+                <li><a href="#">The Obsidian Cleaver</a></li>
+                <li><a href="#">Thornmail</a></li>
+                <li><a href="#">Titanic Hydra</a></li>
+                <li><a href="#">Trinity Force</a></li>
+                <li><a href="#">Trinity Fusion</a></li>
+                <li><a href="#">Void Staff</a></li>
+                <li><a href="#">Warmog's Armor</a></li>
+                <li><a href="#">Wit's End</a></li>
+                <li><a href="#">Youmuu's Ghostblade</a></li>
+                <li><a href="#">Zeke's Convergence</a></li>
+                <li><a href="#">Zhonya's Hourglass</a></li>
+                <li><a href="#">Zz'Rot Portal</a></li>
+                <li><a href="#">None</a></li>
+                </ul>
+                </div>
+                <br> <br>
+                <button style = "margin: 30px 0px 0px 0px; padding-left: 20px; padding-right: 21px;" class="btn btn-primary" type="button" id="submit"> Submit </button>
+                <button style = "margin: 30px 0px 0px 100px; padding-left: 20px; padding-right: 21px;" class="btn btn-primary" type="button" id="share"> Share </button> <br><br><input style = "margin: 0px 190px;" type="text" id="link" value=" " readonly>
+
+        </div>
+        <div class="row marketing">
+        </div>
+
+        <br>
+        <div class="col-lg-6">
+            <h4><img src="/static/stats/hp.png"></img> HP: <span id="hp"> 0 </span> </h4>
+            <h4><img src="/static/stats/mp.png"></img> MP: <span id="mp"> 0 </span> </h4>
+            <h4><img src="/static/stats/ad.png"></img> Attack Damage: <span id="ad"> 0 </span> </h4>
+            <h4><img src="/static/stats/ap.png"></img> Ability Power: <span id="ap"> 0 </span> </h4>
+            <h4><img src="/static/stats/armor.png"></img> Armor: <span id="armor"> 0 </span> </h4>
+            <h4><img src="/static/stats/mr.png"></img> Magic Resist: <span id="mr"> 0 </span> </h4>
+        </div>
+        <div class="col-lg-6">
+            <h4><img src="/static/stats/as.png"></img> Attack Speed: <span id="as"> 0% </span> </h4>
+            <h4><img src="/static/stats/lifesteal.png"></img> Life Steal: <span id="life"> 0% </span> </h4>
+            <h4><img src="/static/stats/crit.png"></img> Critical Strike Chance: <span id="crit"> 0% </span> </h4>
+            <h4><img src="/static/stats/cdr.png"></img> Cooldown Reduction: <span id="cdr"> 0% </span> </h4>
+            <h4><img src="/static/stats/speed.png"></img> Speed: <span id="speed"> 0 </span> </h4>
+        </div>
+
+        <div class = "row marketing">
+        </div>
+
+      <br>
+        <footer class="footer">
+            <p>Steven Tang</p>
+        </footer>
+    </div>
+    <script type=text/javascript src="{{url_for('static', filename='jquery.js') }}"></script>
+</body>
+ 
+</html>

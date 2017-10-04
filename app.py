@@ -14,8 +14,6 @@ def main():
 
 @app.route('/itemInfo/<name_item>')
 def get_info(name_item):
-	if name_item is 'None':
-		return "";
 	name_item = name_item.replace("%20", " ")
 	with open('fullItemsWithCDR.json', 'r') as f:
 		read_data = f.read()

@@ -183,7 +183,7 @@ $( document ).ready(function() {
                         var title = '#item' + (i + 1).toString();
                         var name = '#name' + (i + 1).toString();
 
-                        if(premade[i] != "")
+                        if(premade[i] != "" && premade[i] != "None")
                         {
                             items[i] = httpGet("/itemInfo/" + premade[i].replace(/_/g, "%20"));
                         }
